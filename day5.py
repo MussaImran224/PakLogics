@@ -102,3 +102,21 @@ for word in words:
 most_frequent = max(freq, key=freq.get)
 print(most_frequent)
 #problem 9 set intersection
+set1={1, 2 , 3, 4, 5}
+set2={6, 3 , 9, 1, 2}
+print(set1)
+print(type(set1))
+set3=set1.intersection(set2)
+print(set3)
+#problem 10 phonebook Lookup
+phonebook = {
+    "abc": "1234567890",
+    "def": "5551234567",
+    "ghi": "987-654-3210"
+}
+name = input("Enter name to look up: ")
+if name in phonebook:
+    print(phonebook[name])
+else:
+    print("not found")
+#problem 11 Shopping Total
