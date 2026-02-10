@@ -119,3 +119,32 @@ for i in range(10000):
         break
     count=count+1
 print(count)
+
+#Mini Project
+count = 0
+total = 0
+minimum = None
+maximum = None
+while True:
+    num = int(input("Enter a number (0 to stop): "))
+    
+    if num == 0:
+        break    
+    count += 1
+    total += num
+    
+    if minimum is None or num < minimum:
+        minimum = num
+    
+    if maximum is None or num > maximum:
+        maximum = num
+
+if count == 0:
+    print("No numbers were entered.")
+else:
+    average = total / count
+    print("Count:", count)
+    print("Sum:", total)
+    print("Min:", minimum)
+    print("Max:", maximum)
+    print("Average:", average)
