@@ -38,14 +38,16 @@ for n in list:
         max2 = n  
 print(max2)
 # problem 4 remove Duplicates
-# print("Enter the size of list")
-# size=int(input())
-# list=[]
-# for i in range(size):
-#      element = int(input(f"Enter element {i + 1}: "))
-#      list.append(element)
-# print(list)
-# for n in list:
+print("Enter the size of list")
+size=int(input())
+lst=[]
+for i in range(size):
+     element = int(input(f"Enter element {i + 1}: "))
+     lst.append(element)
+print(lst)
+unique_list = list(set(lst))
+print("List after removing duplicates:")
+print(unique_list)
 #problem 5 count occurences
 print("Enter the size of list")
 size=int(input())
@@ -120,3 +122,58 @@ if name in phonebook:
 else:
     print("not found")
 #problem 11 Shopping Total
+print("Enter number of items: ")
+n = int(input())
+items = {}
+for _ in range(n):
+    print("Enter item name: ")
+    name = input()
+    print("Enter item price: ")
+    price = float(input())
+    items[name] = price
+total_price = sum(items.values())
+most_expensive_item = max(items, key=items.get)
+print("\nTotal price:", total_price)
+print("Most expensive item:", most_expensive_item, "-", items[most_expensive_item])
+#problem 12 Comprehension Filter
+print("Enter integers separated by space: ")
+numbers = list(map(int, input().split()))
+even_numbers = [num for num in numbers if num % 2 == 0]
+print("Even numbers:", even_numbers)
+#Mini Project
+tasks = []
+while True:
+    print("\nTo-Do List Menu:")
+    print("1. Add task")
+    print("2. Remove task")
+    print("3. Show all tasks")
+    print("4. Exit")
+    choice = input("Choose an option (1-4): ")
+    if choice == "1":
+        task = input("Enter a new task: ")
+        tasks.append(task)
+        print("Task added!")
+    elif choice == "2":
+        if not tasks:
+            print("No tasks to remove.")
+        else:
+            for i, task in enumerate(tasks):
+                print(f"{i}: {task}")
+            try:
+                index = int(input("Enter task index to remove: "))
+                removed = tasks.pop(index)
+                print(f"Removed task: {removed}")
+            except (ValueError, IndexError):
+                print("Invalid index.")
+    elif choice == "3":
+        if not tasks:
+            print("No tasks in the list.")
+        else:
+            print("\nYour Tasks:")
+            for i, task in enumerate(tasks):
+                print(f"{i}: {task}")
+    elif choice == "4":
+        print("Goodbye!")
+        break
+    else:
+        print("Invalid choice. Please select 1-4.")
